@@ -1,0 +1,190 @@
+@import url("https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single:wght@100..900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    height: 100vh;
+    background: linear-gradient(45deg, rgb(218, 238, 255), white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Bitcount Grid Single", system-ui;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: rgb(45, 103, 212);
+}
+h1::before {
+    content: "TIC ";
+    color: rgb(255, 64, 96);
+}
+h1::after {
+    content: " TOE";
+    color: grey;
+}
+
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    border-radius: 30px;
+    position: relative;
+    width: min-content;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+    transition: transform 0.3s ease;
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 3px 8px 15px rgba(0, 0, 0, 0.35);
+}
+.box {
+    height: 100px;
+    width: 100px;
+    background: transparent;
+    border-radius: 30px;
+    border-style: none;
+    font-family: "Bitcount Grid Single", system-ui;
+    font-size: 50px;
+    box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, 0.171);
+    padding: 10px 0px 0px 3px;
+}
+.X{
+    color: #407cff;
+}
+.O{
+    color: rgb(214, 71, 71);
+}
+#reset{
+    color: rgb(66, 66, 66);
+}
+.btn {
+    margin: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    height: auto;
+    width: min-content;
+}
+#reset {
+    margin: 20px 0 0 0;
+    padding: 15px 30px;
+    background: linear-gradient(135deg, #78efff, #ff77b9);
+    border-radius: 50px;
+    border-style: none;
+    color: rgb(255, 255, 255);
+    font-family: "Bitcount Grid Single", system-ui;
+    font-size: 20px;
+    width: 200px;
+}
+#reset:hover {
+    background: linear-gradient(45deg, #78efff, #ff77b9);
+}
+#reset:active {
+    transform: translateY(3px);
+}
+.hide {
+    display: none;
+    filter: blur(30px);
+}
+
+#msg {
+    padding: 10px 0;
+    font-size: 25px;
+    color: #ffffff;
+    position: absolute;
+    border: 1px solid rgba(0, 0, 0, 0.76);
+    border-left: none;
+    border-right: none;
+    background-color: rgba(60, 60, 60, 0.719);
+    width: 100%;
+    text-align: center;
+}
+
+@media (min-width: 1025px) {
+    .card {
+        max-width: 550px;
+    }
+
+    .box {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+        padding: 20px;
+        max-width: 350px;
+    }
+
+    .box {
+        width: 90px;
+        height: 90px;
+        font-size: 40px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    #reset {
+        font-size: 1rem;
+        padding: 12px 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        height: 100vh;
+        position: static;
+        overflow-y: hidden;
+    }
+    .card {
+        padding: 15px;
+        max-width: 300px;
+        box-shadow: none;
+    }
+    .card:hover {
+        transform: translateY(0);
+        box-shadow: none;
+    }
+
+    .box {
+        width: 80px;
+        height: 80px;
+        font-size: 36px;
+    }
+
+    h1 {
+        font-size: 1.9rem;
+    }
+
+    #reset {
+        font-size: 1rem;
+        padding: 10px 20px;
+        width: 150px;
+    }
+    #msg {
+        font-size: 1.4rem;
+        width: 100vw;
+    }
+}
+@media (max-width: 350px) {
+    .card {
+        max-width: 250px;
+    }
+
+    .box {
+        width: 70px;
+        height: 70px;
+        font-size: 30px;
+    }
+    #msg {
+        font-size: 1rem;
+    }
+}
